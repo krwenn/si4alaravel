@@ -17,7 +17,4 @@
         <td>{{ $item->fakultas->nama}}</td>
     </tr>
     @endforeach
-@foreach ($prodi as $item)
-    {{ $item->nama }} {{ $item->jenjang }}<br>
-@endforeach
 </table>
