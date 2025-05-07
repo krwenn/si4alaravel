@@ -3,7 +3,7 @@
   <!--begin::Head-->
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>AdminLTE 4 | Unfixed Sidebar</title>
+    <title>@yield('title')</title>
     <!--begin::Primary Meta Tags-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="title" content="AdminLTE 4 | Unfixed Sidebar" />
@@ -724,11 +724,11 @@
           <div class="container-fluid">
             <!--begin::Row-->
             <div class="row">
-              <div class="col-sm-6"><h3 class="mb-0">Unfixed Layout</h3></div>
+              <div class="col-sm-6"><h3 class="mb-0">@yield('title')</h3></div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-end">
                   <li class="breadcrumb-item"><a href="#">Home</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Unfixed Layout</li>
+                  <li class="breadcrumb-item active" aria-current="page">@yield('title')</li>
                 </ol>
               </div>
             </div>

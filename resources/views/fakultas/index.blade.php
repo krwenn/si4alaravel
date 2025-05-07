@@ -1,4 +1,5 @@
 @extends('layout.main')
+@section('title', 'Fakultas')
 @section('content')
     <!--begin::Row-->
     <div class="row">
@@ -44,12 +45,8 @@
                     </tr>
                 @endforeach
                 </table>
-
             </div>
             <!-- /.card-body -->
-
-
-
           <!-- /.card -->
         </div>
       </div>
