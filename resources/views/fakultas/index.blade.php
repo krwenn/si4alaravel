@@ -27,29 +27,31 @@
                 </button>
               </div>
             </div>
-            <div class="card-body">Start creating your amazing application!</div>
+            <div class="card-body">
+                <table class="table table-bordered table-striped">
+                    <tr>
+                        <th>Nama</th>
+                        <th>Singkatan</th>
+                        <th>Dekan</th>
+                        <th>Wakil Dekan</th>
+                    </tr>
+                @foreach ($fakultas as $item)
+                    <tr>
+                        <td>{{$item->nama}}</td>
+                        <td>{{$item->singkatan}}</td>
+                        <td>{{$item->dekan}}</td>
+                        <td>{{$item->wakil_dekan}}</td>
+                    </tr>
+                @endforeach
+                </table>
+
+            </div>
             <!-- /.card-body -->
 
-            <h1>Fakultas</h1>
-<table>
-    <tr>
-        <th>Nama</th>
-        <th>Singkatan</th>
-        <th>Dekan</th>
-        <th>Wakil Dekan</th>
-    </tr>
-@foreach ($fakultas as $item)
-    <tr>
-        <td>{{$item->nama}}</td>
-        <td>{{$item->singkatan}}</td>
-        <td>{{$item->dekan}}</td>
-        <td>{{$item->wakil_dekan}}</td>
-    </tr>
-@endforeach
-</table>
-@endsection
+
 
           <!-- /.card -->
         </div>
       </div>
       <!--end::Row-->
+      @endsection
