@@ -1,5 +1,7 @@
-<h1>Fakultas</h1>
+@extends('layout.main')
+@section('content')
 
+<h1>Fakultas</h1>
 <table>
     <tr>
         <th>Nama</th>
@@ -7,13 +9,13 @@
         <th>Dekan</th>
         <th>Wakil Dekan</th>
     </tr>
-
-    @foreach ($fakultas as $item)
+@foreach ($fakultas as $item)
     <tr>
-        <td>{{ $item->nama }}</td>
-        <td>{{ $item->singkatan }}</td>
-        <td>{{ $item->dekan }}</td>
-        <td>{{ $item->wakil_dekan }}</td>
+        <td>{{$item->nama}}</td>
+        <td>{{$item->singkatan}}</td>
+        <td>{{$item->dekan}}</td>
+        <td>{{$item->wakil_dekan}}</td>
     </tr>
-    @endforeach
+@endforeach
 </table>
+@endsection

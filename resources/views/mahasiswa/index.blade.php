@@ -1,3 +1,6 @@
+@extends('layout.main')
+@section('content')
+
 <h1>Mahasiswa</h1>
 
 <table>
@@ -22,13 +25,4 @@
     </tr>
     @endforeach
 </table>
-
-@extends('layout.main')
-@section('content')
-<h1>Mahasiswa</h1>\
-@foreach ( $mahasiswa as $item )
-    {{ $item ->npm}} | {{
-        
-    }}
-
-@endforeach
+@endsection
