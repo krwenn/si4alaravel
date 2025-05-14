@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('title','Fakultas')
+@section('title','prodi')
 
 @section('content')
 <!--begin::Row-->
@@ -7,15 +7,15 @@
     <div class="col-12">
         <div class="card card-primary card-outline mb-4">
                   <!--begin::Header-->
-                  <div class="card-header"><div class="card-title"><b>Tambah Fakultas</b></div></div>
+                  <div class="card-header"><div class="card-title"><b>Tambah Prodi</b></div></div>
                   <!--end::Header-->
                   <!--begin::Form-->
-                  <form action="{{ route('fakultas.store') }}" method="POST">
+                  <form action="{{ route('prodi.store') }}" method="POST">
                     @csrf
                     <!--begin::Body-->
                     <div class="card-body">
                       <div class="mb-3">
-                        <label for="nama" class="form-label">Nama Fakultas</label>
+                        <label for="nama" class="form-label">Nama Prodi</label>
                         <input type="text" class="form-control" name="nama" value="{{ old('nama') }}">
                         @error('nama')
                         <div class="alert alert-danger mt-2">{{ $message }}
