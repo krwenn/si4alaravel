@@ -10,6 +10,6 @@ class Prodi extends Model
 
     public function fakultas()
     {
-        return $this->belongsTo(Fakultas::class, 'fakultas_id', 'id'); 
-    }  
+        return $this->belongsTo(Fakultas::class, 'fakultas_id', 'id');
+    }
 }
