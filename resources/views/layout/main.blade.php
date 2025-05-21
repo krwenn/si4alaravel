@@ -3,7 +3,7 @@
   <!--begin::Head-->
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>@yield('title')</title>
+    <title>AdminLTE 4 | @yield('title')</title>
     <!--begin::Primary Meta Tags-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="title" content="AdminLTE 4 | Unfixed Sidebar" />
@@ -309,19 +309,19 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a class='nav-link' href='{{url('fakultas')}}'>
+                <a class='nav-link' href='{{ url('fakultas')}}'>
                   <i class="nav-icon bi bi-palette"></i>
                   <p>Fakultas</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a class='nav-link' href='{{url('prodi')}}'>
+                <a class='nav-link' href='{{ url('prodi')}}'>
                   <i class="nav-icon bi bi-palette"></i>
-                  <p>Program Studi</p>
+                  <p>Prodi</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a class='nav-link' href='{{url('mahasiswa')}}'>
+                <a class='nav-link' href='{{ url('mahasiswa')}}'>
                   <i class="nav-icon bi bi-palette"></i>
                   <p>Mahasiswa</p>
                 </a>
@@ -818,6 +818,30 @@
       });
     </script>
     <!--end::OverlayScrollbars Configure-->
+
+<!-- jquery cdn -->
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+<script type="text/javascript">
+    $('.show_confirm').click(function(event) {
+        var form = $(this).closest("form");
+        var nama = $(this).data("nama");
+        event.preventDefault();
+        swal({
+                title: `Apakah Anda yakin ingin menghapus data ${nama} ini?`,
+                text: "If you delete this, it will be gone forever.",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    form.submit();
+                }
+            });
+    });
+</script>
     <!--end::Script-->
   </body>
   <!--end::Body-->

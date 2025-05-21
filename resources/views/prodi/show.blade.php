@@ -1,4 +1,3 @@
-
 @extends('layout.main')
 @section('title','Program Studi')
 
@@ -31,40 +30,32 @@
           </div>
         </div>
         <div class="card-body">
-          <a href="{{ route('prodi.create')}}" class="btn btn-primary"> Tambah </a>
-            <br><br><table class="table table-bordered table-striped">
+            <table class="table table-bordered table-striped">
                 <tr>
                     <th>Nama</th>
-                    <th>Singkatan</th>
-                    <th>Kaprodi</th>
-                    <th>Sekretaris</th>
-                    <th>Fakultas</th>
-                    <th>Aksi</th>
+                    <td>{{ $prodi->nama}}</td>
                 </tr>
-                @foreach ($prodi as $item)
                 <tr>
-                    <td>{{ $item->nama }}</td>
-                    <td>{{ $item->singkatan}}</td>
-                    <td>{{ $item->kaprodi}}</td>
-                    <td>{{ $item->sekretaris}}</td>
-                    <td>{{ $item->fakultas->nama}}</td>
-                                        <td>
-                        <a href="{{ route('prodi.show', $item->id) }}" class="btn btn-info">Show</a>
-                        <a href="{{ route('prodi.edit', $item->id) }}" class="btn btn-warning">Edit</a>
-                        <form action="{{ route('prodi.destroy', $item->id) }}" method="POST" class="d-inline">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Delete</button>
-                        </form>
-                    </td>
+                    <th>Singkatan</th>
+                    <td>{{ $prodi->singkatan}}</td>
                 </tr>
-                @endforeach
+                <tr>
+                    <th>Kaprodi</th>
+                    <td>{{ $prodi->kaprodi}}</td>
+                </tr>
+                <tr>
+                    <th>Sekretaris</th>
+                    <td>{{ $prodi->sekretaris}}</td>
+                </tr>
+                <tr>
+                    <th>Fakultas</th>
+                    <td>{{ $prodi->fakultas->nama}}</td>
+                </tr>
             </table>
         </div>
-        <!-- /.card-body -->
       </div>
-      <!-- /.card -->
+        <!-- /.card -->
     </div>
-  </div>
-  <!--end::Row-->
-  @endsection
+</div>
+<!--end::Row-->
+@endsection
