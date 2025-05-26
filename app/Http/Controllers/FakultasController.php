@@ -1,3 +1,4 @@
+
 <?php
 
 namespace App\Http\Controllers;
@@ -60,17 +61,30 @@ class FakultasController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Fakultas $fakultas)
+    public function edit($fakultas)
     {
-        //
+        $fakultas = Fakultas::findOrFail($fakultas);
+        //dd($fakultas);
+        return view('fakultas.edit', compact('fakultas'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Fakultas $fakultas)
+    public function update(Request $request, $fakultas)
     {
-        //
+        $fakultas = Fakultas::findOrFail($fakultas);
+        // validasi input
+        $input = $request->validate([
+            'nama' => 'required',
+            'singkatan' => 'required|max:5',
+            'dekan' => 'required',
+            'wakil_dekan' => 'required',
+        ]);
+        // update data fakultas
+        $fakultas->update($input);
+        // redirect ke route fakultas.index
+        return redirect()->route('fakultas.index')->with('success', 'Fakultas berhasil diperbarui.');
     }
 
     /**
