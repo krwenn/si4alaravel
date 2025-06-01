@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('title','Program Studi')
+@section('title','Sesi')
 
 @section('content')
 <!--begin::Row-->
@@ -8,7 +8,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title"><b>List Program Studi</b></h3>
+          <h3 class="card-title"><b>List Sesi</b></h3>
           <div class="card-tools">
             <button
               type="button"
@@ -30,27 +30,21 @@
           </div>
         </div>
         <div class="card-body">
-          <a href="{{ route('prodi.create')}}" class="btn btn-primary"> Tambah </a>
+          <a href="{{ route('sesi.create')}}" class="btn btn-primary"> Tambah </a>
             <br><br><table class="table table-bordered table-striped">
                 <tr>
+                    <th>No</th>
                     <th>Nama</th>
-                    <th>Singkatan</th>
-                    <th>Kaprodi</th>
-                    <th>Sekretaris</th>
-                    <th>Fakultas</th>
                     <th>Aksi</th>
                 </tr>
-                @foreach ($prodi as $item)
+                @foreach ($sesi as $item)
                 <tr>
-                    <td>{{ $item->nama }}</td>
-                    <td>{{ $item->singkatan}}</td>
-                    <td>{{ $item->kaprodi}}</td>
-                    <td>{{ $item->sekretaris}}</td>
-                    <td>{{ $item->fakultas->nama}}</td>
+                    <td>{{ $item->id }}</td>
+                    <td>{{ $item->nama}}</td>
                     <td>
-                        <a href="{{ route('prodi.show', $item->id) }}" class="btn btn-info">Show</a>
-                        <a href="{{ route('prodi.edit', $item->id) }}" class="btn btn-warning">Edit</a>
-                        <form action="{{ route('prodi.destroy', $item->id) }}" method="POST" class="d-inline">
+                        <a href="{{ route('sesi.show', $item->id) }}" class="btn btn-info">Show</a>
+                        <a href="{{ route('sesi.edit', $item->id) }}" class="btn btn-warning">Edit</a>
+                        <form action="{{ route('sesi.destroy', $item->id) }}" method="POST" class="d-inline">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger show_confirm"
