@@ -287,37 +287,37 @@
                 </li>
               <li class="nav-item">
                 <a class='nav-link' href='{{ url('fakultas')}}'>
-                  <i class="nav-icon bi bi-mortarboard"></i>
+                  <i class="nav-icon bi bi-palette"></i>
                   <p>Fakultas</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a class='nav-link' href='{{ url('prodi')}}'>
-                  <i class="nav-icon bi bi-lightbulb"></i>
+                  <i class="nav-icon bi bi-palette"></i>
                   <p>Program Studi</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a class='nav-link' href='{{ url('mahasiswa')}}'>
-                  <i class="nav-icon bi bi-person-lines-fill"></i>
+                  <i class="nav-icon bi bi-palette"></i>
                   <p>Mahasiswa</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a class='nav-link' href='{{ url('sesi')}}'>
-                  <i class="nav-icon bi bi-building"></i>
+                  <i class="nav-icon bi bi-palette"></i>
                   <p>Sesi</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a class='nav-link' href='{{ url('mata_kuliah')}}'>
-                  <i class="nav-icon bi bi-journals"></i>
+                  <i class="nav-icon bi bi-palette"></i>
                   <p>Mata Kuliah</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a class='nav-link' href='{{ url('jadwal')}}'>
-                  <i class="nav-icon bi bi-calendar-check"></i>
+                  <i class="nav-icon bi bi-palette"></i>
                   <p>Jadwal</p>
                 </a>
               </li>
