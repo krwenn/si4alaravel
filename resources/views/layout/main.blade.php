@@ -207,7 +207,7 @@
                   class="user-image rounded-circle shadow"
                   alt="User Image"
                 />
-                <span class="d-none d-md-inline">Alexander Pierce</span>
+                <span class="d-none d-md-inline">{{ Auth::user()->name }}</span>
               </a>
               <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
                 <!--begin::User Image-->
@@ -218,7 +218,7 @@
                     alt="User Image"
                   />
                   <p>
-                    Alexander Pierce - Web Developer
+                    {{ Auth::user()->name }} - Dosen/Admin
                     <small>Member since Nov. 2023</small>
                   </p>
                 </li>
@@ -235,9 +235,18 @@
                 </li>
                 <!--end::Menu Body-->
                 <!--begin::Menu Footer-->
-                <li class="user-footer">
+                <li class="user-footer d-flex justify-content-between">
+                      <!-- Profile Link -->
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
-                  <a href="#" class="btn btn-default btn-flat float-end">Sign out</a>
+                      <!-- Authentication -->
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <x-dropdown-link :href="route('logout')"
+                                    onclick="event.preventDefault();
+                                                this.closest('form').submit();" class="btn btn-default btn-flat float-end">
+                                {{ __('Log Out') }}
+                            </x-dropdown-link>
+                        </form>
                 </li>
                 <!--end::Menu Footer-->
               </ul>
@@ -287,37 +296,37 @@
                 </li>
               <li class="nav-item">
                 <a class='nav-link' href='{{ url('fakultas')}}'>
-                  <i class="nav-icon bi bi-palette"></i>
+                  <i class="nav-icon bi bi-mortarboard"></i>
                   <p>Fakultas</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a class='nav-link' href='{{ url('prodi')}}'>
-                  <i class="nav-icon bi bi-palette"></i>
+                  <i class="nav-icon bi bi-lightbulb"></i>
                   <p>Program Studi</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a class='nav-link' href='{{ url('mahasiswa')}}'>
-                  <i class="nav-icon bi bi-palette"></i>
+                  <i class="nav-icon bi bi-person-lines-fill"></i>
                   <p>Mahasiswa</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a class='nav-link' href='{{ url('sesi')}}'>
-                  <i class="nav-icon bi bi-palette"></i>
+                  <i class="nav-icon bi bi-building"></i>
                   <p>Sesi</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a class='nav-link' href='{{ url('mata_kuliah')}}'>
-                  <i class="nav-icon bi bi-palette"></i>
+                  <i class="nav-icon bi bi-journals"></i>
                   <p>Mata Kuliah</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a class='nav-link' href='{{ url('jadwal')}}'>
-                  <i class="nav-icon bi bi-palette"></i>
+                  <i class="nav-icon bi bi-calendar-check"></i>
                   <p>Jadwal</p>
                 </a>
               </li>
