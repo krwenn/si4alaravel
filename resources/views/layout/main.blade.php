@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <!--begin::Head-->
@@ -218,8 +219,8 @@
                     alt="User Image"
                   />
                   <p>
-                    {{ Auth::user()->name }} - Dosen/Admin
-                    <small>Member since Nov. 2023</small>
+                    {{ Auth::user()->name }} - {{ ucfirst((Auth::user()->role)) }}
+                    <small>Member of Universitas MDP</small>
                   </p>
                 </li>
                 <!--end::User Image-->

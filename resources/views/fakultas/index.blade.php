@@ -1,4 +1,3 @@
-
 @extends('layout.main')
 @section('title','Fakultas')
 
@@ -31,9 +30,11 @@
           </div>
         </div>
         <div class="card-body">
+          @can('create', App\Models\Fakultas::class)
           <a href="{{ route('fakultas.create')}}" class="btn btn-primary"> Tambah </a>
+          @endcan
             <br><br><table class="table table-bordered table-striped">
-                <tr>
+                <tr class="text-center">
                     <th>Nama</th>
                     <th>Singkatan</th>
                     <th>Dekan</th>
@@ -42,14 +43,17 @@
                 </tr>
 
                 @foreach ($fakultas as $item)
-                <tr>
+                <tr class="text-center">
                     <td>{{ $item->nama }}</td>
                     <td>{{ $item->singkatan }}</td>
                     <td>{{ $item->dekan }}</td>
                     <td>{{ $item->wakil_dekan }}</td>
                     <td>
                         <a href="{{ route('fakultas.show', $item->id) }}" class="btn btn-info">Show</a>
+                        @can('update', $item)
                         <a href="{{ route('fakultas.edit', $item->id) }}" class="btn btn-warning">Edit</a>
+                        @endcan
+                        @can('delete', $item)
                         <form action="{{ route('fakultas.destroy', $item->id) }}" method="POST" class="d-inline">
                             @csrf
                             @method('DELETE')
@@ -57,6 +61,7 @@
                             data-toggle="tooltip" title='Delete'
                             data-nama='{{ $item->nama }}'>Delete</button>
                         </form>
+                        @endcan
                     </td>
                 </tr>
                 @endforeach
